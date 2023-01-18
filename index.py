@@ -10,7 +10,7 @@ CORS(app)
 def result():
     output = request.get_json()
     rand = output["symptoms"]
-    print(rand)
+    
     
     def prediction(rand):
     # loading dataset         
