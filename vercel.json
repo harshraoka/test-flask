@@ -6,17 +6,21 @@
             "use": "@vercel/python"
         }
     ],
-    "routes": [
+    "rewrites": [
+        { "source": "/(.*)", "destination": "src/app.js" }
+    ],
+    "headers": [
         {
-            "src": "/(.*)",
-        
-            "headers": [
-                {
-                  "key": "access-control-allow-origin",
-                  "value": "*"
-                }
-            ]
-        }
+          "source": "/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" }
+          ]
+        },
+        {
+          "source": "/vercel_app_domain_name/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Origin", "value": "*" }
+          ]
+        }  
     ]
-    
 }
