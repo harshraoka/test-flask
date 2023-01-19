@@ -14,8 +14,8 @@ def result():
     
     def prediction(rand):
     # loading dataset         
-        url = 'https://github.com/harshraoka/dataset/blob/main/Training.csv?raw=true'
-        training = pd.read_csv(url, index_col=0) 
+        
+        training = pd.read_csv('./Training.csv') 
     
 
     # removing unnesecarry data points
